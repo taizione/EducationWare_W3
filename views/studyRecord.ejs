@@ -1,0 +1,15 @@
+
+<b> <font color="blue"><h1><%= __('EW0029')%></h1></font></b>
+
+ <hr>
+<% profileResults.forEach(function(profileResult, index) { 
+  %>
+
+    <div class="row" >
+        <div class="span4">
+            <p class="text-left"> <i class="icon-star"></i><b><%= __('EW0024')%><%= profileResult.coursename %></p>
+            <p class="text-left"><i class="icon-flag"></i><b><%= __('EW0025')%><%= profileResult.times %></p>
+        </div>
+    </div><!-- end row -->
+      <hr>
+<%}) %>

@@ -1,0 +1,25 @@
+
+
+
+	<form method="post" action="/postIdea" style="text-align:left;">
+
+		<div class="form-group">
+		<label for="ideaTitle"><b><%= __('EW0012')%></b></label>
+
+		<input type="text" class="form-control" name="ideaName" placeholder='<%= __('EW0026')%>'>
+
+		</div>
+
+		<div class="form-group">
+
+		<label for="ideaDescTitle"><b><%= __('EW0013')%></b></label>
+
+		<textarea row="10" class="form-control" name="ideaDesc" placeholder='<%= __('EW0027')%>'></textarea>
+
+		</div>
+
+	  <input type="submit" class="btn btn-primary" value=<%= __('EW0028')%>>
+ </form>
+<%- include posts %> 
+
+

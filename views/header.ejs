@@ -1,0 +1,22 @@
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+               <a class="navbar-brand" href="/versionRecord"><i class="icon-eye-open"></i><%= __('EW0005')%></a>  
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="/"><%= __('EW0001')%></a></li>
+                <% if (!user) { %>
+                  <li><a href="/login"><%= __('EW0002')%></a></li>
+                <% } else { %>
+                  <li><a href="/logout"><%= __('EW0004')%></a></li>
+                   <li><a href="/profile"><%= __('EW0035')%>_<%=user.username%>(<%=user.times%>)</a></li>
+                <% } %>
+            </ul>
+<!--             <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" placeholder="Search...">
+            </form> -->
+        </div>
+      </div>
+    </div>

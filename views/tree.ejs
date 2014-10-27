@@ -1,0 +1,164 @@
+      <script type="text/javascript">
+      $(function(){
+          $('.tree li:has(ul)').addClass('parent_li').find(' > span').attr('title', 'Collapse this branch');
+          $('.tree li.parent_li > span').on('click', function (e) {
+              var children = $(this).parent('li.parent_li').find(' > ul > li');
+              if (children.is(":visible")) {
+                  children.hide('fast');
+                  $(this).attr('title', 'Expand this branch').find(' > i').addClass('icon-plus-sign').removeClass('icon-minus-sign');
+              } else {
+                  children.show('fast');
+                  $(this).attr('title', 'Collapse this branch').find(' > i').addClass('icon-minus-sign').removeClass('icon-plus-sign');
+              }
+              e.stopPropagation();
+          });
+      });
+
+      </script>
+
+      
+   <div class="col-sm-3 sidebar">
+          <div class="tree">
+            <ul>
+                <li>
+                    <span><i class="icon-calendar"></i> Monthly Session</span>
+                      <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i> 08/15 14:00 - 16:00 </span>
+                              <ul>
+                                <li>
+                                <% if(records["translation_qality_process"]==undefined) records["translation_qality_process"]=0 %>
+                                  <a href="/translation_qality_process"><span class="label label-warning"><i class="label label-warning"></i> Translation Quality Process<font color="red">(<%= records["translation_qality_process"]%>)</font></a>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>
+                                <% if(records["sniff_gvt_for_bluemix"]==undefined) records["sniff_gvt_for_bluemix"]=0 %>
+                                  <a href="/sniff_gvt_for_bluemix"><span class="label label-warning"><i class="label label-warning"></i> Sniff GVT for Bluemix<font color="red">(<%= records["sniff_gvt_for_bluemix"]%>)</font></a>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                      <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i> 08/08 13:00 - 15:00 </span>
+                              <ul>
+                                <li>
+                                <% if(records["gb18030"]==undefined) records["gb18030"]=0 %>
+                                  <a href="/gb18030"><span class="label label-warning"><i class="label label-warning"></i> GB18030<font color="red">(<%= records["gb18030"]%>)</font></a>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>
+                                <% if(records["how_to_write_wellconveived_technical_documentation"]==undefined) records["how_to_write_wellconveived_technical_documentation"]=0 %>
+                                  <a href="/how_to_write_wellconveived_technical_documentation"><span class="label label-warning"><i class="label label-warning"></i> How to Write Well-conveived Technical Documentation<font color="red">(<%= records["how_to_write_wellconveived_technical_documentation"]%>)</font></a>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+
+                      <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i> 07/25 14:00 - 16:00 </span>
+                              <ul>
+                                <li>
+                                <% if(records["gvt_in_cd_Process"]==undefined) records["gvt_in_cd_Process"]=0 %>
+                                  <a href="/gvt_in_cd_Process"><span class="label label-warning"><i class="label label-warning"></i> GVT in CD process<font color="red">(<%= records["gvt_in_cd_Process"]%>)</font></a>
+                                </li>
+                            </ul>
+
+                            <ul>
+                                <li>
+                                <% if(records["dbs_enhancements"]==undefined) records["dbs_enhancements"]=0 %>
+                                  <a href="/dbs_enhancements"><span class="label label-warning"><i class="label label-warning"></i> 2014 1H DBs enhancements<font color="red">(<%= records["dbs_enhancements"]%>)</font></a>
+                                </li>
+                            </ul>
+                             <ul>
+                                <li>
+                                <% if(records["demo_testcase_creation_tool"]==undefined) records["demo_testcase_creation_tool"]=0 %>
+                                  <a href="/demo_testcase_creation_tool"><span class="label label-warning"><i class="label label-warning"></i>Demo_TestCaseCreationTool<font color="red">(<%= records["demo_testcase_creation_tool"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i> 06/27 14:00 - 16:00 </span>
+                            <ul>
+                                <li>
+                                <% if(records["tips_for_better_doing_tvt_go_nogo_accessment"]==undefined) records["tips_for_better_doing_tvt_go_nogo_accessment"]=0 %>
+                                  <a href="/tips_for_better_doing_tvt_go_nogo_accessment"><span class="label label-warning"><i class="label label-warning"></i> Tips for better doing TVT Go/No-Go Assessment<font color="red">(<%= records["tips_for_better_doing_tvt_go_nogo_accessment"]%>)</font></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                <% if(records["gvt_ta_example_sharing"]==undefined) records["gvt_ta_example_sharing"]=0 %>
+                                  <a href="/gvt_ta_example_sharing"><span class="label label-warning"><i class="label label-warning"></i> GVT TA example sharing<font color="red">(<%= records["gvt_ta_example_sharing"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i> 05/30 14:00 - 16:00 </span>
+                            <ul>
+                                <li>
+                                <% if(records["speed_kpi_definition_and_gso_project_data_collection"]==undefined) records["speed_kpi_definition_and_gso_project_data_collection"]=0 %>
+                                  <a href="/speed_kpi_definition_and_gso_project_data_collection"><span class="label label-warning"><i class="label label-warning"></i> Speed KPI definition and GSO Project Data Collection<font color="red">(<%= records["speed_kpi_definition_and_gso_project_data_collection"]%>)</font></a>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                 <% if(records["defect_creation_tips"]==undefined) records["defect_creation_tips"]=0 %>
+                                  <a href="/defect_creation_tips"><span class="label label-warning"><i class="label label-warning"></i> Defect Creation Tips<font color="red">(<%= records["defect_creation_tips"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span><i class="icon-calendar"></i> GVT&TVT Education</span>
+                    <ul>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i>GVT</span>
+                            <ul>
+                                <li>
+                                 <% if(records["gvtEducation"]==undefined) records["gvtEducation"]=0 %>
+                                  <a href="/gvtEducation"><span class="label label-warning"><i class="label label-warning"></i> GVT Process<font color="red">(<%= records["gvtEducation"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i>TVT</span>
+                            <ul>
+                                <li>
+                                <% if(records["tvtProcess"]==undefined) records["tvtProcess"]=0 %>
+                                  <a href="/tvtProcess"><span class="label label-warning"><i class="label label-warning"></i> TVT Process<font color="red">(<%= records["tvtProcess"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                          <span class="label label-success"><i class="icon-minus-sign"></i>UATools</span>
+                            <ul>
+                                <li>
+                                <% if(records["uaTools"]==undefined) records["uaTools"]=0 %>
+                                  <a href="/uaTools"><span class="label label-warning"><i class="label label-warning"></i> UA Tools<font color="red">(<%= records["uaTools"]%>)</font></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+      </div>
+  
+

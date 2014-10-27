@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title><%= title %> - <%= __('EW0041')%></title>
+
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+
+        <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+            <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link href="/stylesheets/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body> 
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-list bs-docs-sidenav">
+
+            <li><a href="/versionRecord"><i class="icon-chevron-right"></i><%= __('EW0006')%></a></li>
+            <li><a href="/profile"><i class="icon-chevron-right"></i><%= __('EW0007')%></a></li> 
+            <li><a href="/say"><i class="icon-chevron-right"></i><%= __('EW0008')%></a></li>
+<!--                     <ul class="nav nav-list bs-docs-sidenav">
+                      <li><a href="/say"><i class="icon-chevron-right"></i> 我要提Idea</a></li>
+                      <li><a href="/bug"><i class="icon-chevron-right"></i> 我要报Bug</a></li>
+                    </ul> -->
+            <li><a href="/aboutUs"><i class="icon-chevron-right"></i><%= __('EW0009')%></a></li>
+          </ul>
+        </div>
+         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+              <div >
+                      <% if (success) { %>
+                        <div class="alert alert-success">
+                          <%= success %>
+                        </div>
+                      <% } %>
+                      <% if (error) { %>
+                        <div class="alert alert-error">
+                          <%= error %>
+                        </div>
+                      <% } %>
+                    <%- body %>
+              </div>
+            <%- include header%>
+      </div>
+    </div>
+    </div>
+
+  </body>
+        <hr />
+  <%- include footer %> 
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/bootstrap.js"></script>
+</html>
