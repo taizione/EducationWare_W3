@@ -1,22 +1,106 @@
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container-fluid">
-
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-left">
-               <a class="navbar-brand" href="/versionRecord"><i class="icon-eye-open"></i><%= __('EW0005')%></a>  
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="/"><%= __('EW0001')%></a></li>
+<div id="ibm-top" class=" ibm-landing-page">
+<!-- MASTHEAD_BEGIN -->
+<div class="ibm-access"><a href="#ibm-content">Skip to main content</a></div>
+<div id="ibm-masthead" >
+<div id="ibm-mast-options">
+<a href="http://gssc.tw.ibm.com/" style="font-size:15px;">Globalization Shared Services Center</a>
+<ul>
                 <% if (!user) { %>
                   <li><a href="/login"><%= __('EW0002')%></a></li>
                 <% } else { %>
-                  <li><a href="/logout"><%= __('EW0004')%></a></li>
-                   <li><a href="/profile"><%= __('EW0035')%>_<%=user.username%>(<%=user.times%>)</a></li>
+                  <li>Welcome <%=user.username%><a href="/logout">|<%= __('EW0004')%></a></li>
                 <% } %>
-            </ul>
-<!--             <form class="navbar-form navbar-right">
-              <input type="text" class="form-control" placeholder="Search...">
-            </form> -->
-        </div>
-      </div>
-    </div>
+</ul>
+</div>
+<div id="ibm-universal-nav" >
+<ul id="ibm-unav-links" >
+<li id="ibm-home"><a href="http://www.ibm.com/us/en/">IBM®</a></li>
+</ul>
+  <div id="ibm-menu-links">
+  <ul>
+  <!--<li><a href="/mission">Mission</a></li>-->
+  <!--<li><a href="/onlineCourse" rel="ddsubmenu1">Online Course</a></li>-->
+   <li><a href="/onlineCourse">Online Course</a></li>
+  <li><a href="/profile">Personal Center</a></li>
+  <!--<li><a href="achievements.jsp" rel="ddsubmenu2">Achievements</a></li>-->
+  <!--<li><a href="knowledgebase.jsp" rel="ddsubmenu3">Knowledge Base</a></li>-->
+  <li><a href="aboutus.jsp" rel="ddsubmenu4">About Us</a></li>
+  </ul>
+  </div>
+  
+  <script type="text/javascript">
+  ddlevelsmenu.setup("ibm-menu-links", "topbar") //ddlevelsmenu.setup("mainmenuid", "topbar|sidebar")
+  </script>
+<div id="ibm-search-module">
+<form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get">
+<p>
+<label for="q"><span class="ibm-access">Search</span></label>
+<input type="text" maxlength="100" value="" name="q" id="q"/>
+<input type="hidden" value="17" name="v"/>
+<input type="hidden" value="utf" name="en"/>
+<input type="hidden" value="en" name="lang"/>
+<input type="hidden" value="us" name="cc"/>
+<input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
+</p>
+</form>
+</div>
+</div>
+</div>
+
+
+<!--HTML for the Drop Down Menus associated with Top Menu Bar-->
+<!--They should be inserted OUTSIDE any element other than the BODY tag itself-->
+<!--A good location would be the end of the page (right above "</BODY>")-->
+
+<!--Top Drop Down Menu 1 HTML-->
+
+
+<ul id="ddsubmenu1" class="ddsubmenustyle">
+<li><a href="#">Monthly Session</a></li>
+<li><a href="#">GVT&TVT Education</a></li>
+</ul>
+
+
+<!--Top Drop Down Menu 2 HTML-->
+
+
+<ul id="ddsubmenu2" class="ddsubmenustyle">
+<li><a href="#">Unleash the Lab</a></li>
+<li><a href="#">Acquisitions</a></li>
+<li><a href="#">Publications</a></li>
+<li><a href="#">Certifications</a></li>
+<li><a href="#">Appreciation</a></li>
+</ul>
+
+
+<!--Top Drop Down Menu 3 HTML-->
+
+
+<ul id="ddsubmenu3" class="ddsubmenustyle">
+<li><a href="#">TSC Operations FAQ</a></li>
+<li><a href="#">GB18030 FAQ</a></li>
+<li><a href="#">TVT Knowledge Base</a>
+  <ul>
+  <li><a href="#">For TVT Tester</a></li>
+  <li><a href="#">For Developer</a></li>
+  <li><a href="#">For File Handler</a></li>
+  <li><a href="#">For TVT Support Engineer</a></li> 
+  </ul>
+</li>
+<li><a href="#">Globalization FAQ</a></li>
+<li><a href="#">References</a></li>
+</ul>
+
+
+<!--Top Drop Down Menu 4 HTML-->
+
+
+<ul id="ddsubmenu4" class="ddsubmenustyle">
+<li><a href="#">About Us</a></li>
+<li><a href="#">Version History</a></li>
+<li><a href="/aboutUS">Contact Us</a></li>
+</ul>
+
+<!-- MASTHEAD_END -->
+
+

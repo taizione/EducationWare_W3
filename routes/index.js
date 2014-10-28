@@ -24,7 +24,25 @@ module.exports = function(app) {
         records = [];
       }
       console.log(records);
-      res.render('index', {
+      // res.render('index', {
+      //   title: res.__('EW0001'),
+      //   records: records,
+      // });
+      res.redirect('/onlineCourse');
+    });
+  });
+    app.get('/onlineCourse', function(req, res) {
+    var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+    console.log("locale:"+locale);
+    i18n.init(req, res);
+    req.setLocale(locale);
+    Record.calculateTimes(function(err, records) {
+      if (err) {
+        records = [];
+      }
+      console.log(records);
+      res.render('onlineCourse', {
         title: res.__('EW0001'),
         records: records,
       });
@@ -40,7 +58,7 @@ module.exports = function(app) {
     req.setLocale(locale);
     res.render('login', {
       title: res.__('EW0002'),
-      
+      layout: null,
     });
   }); 
   
@@ -83,7 +101,7 @@ module.exports = function(app) {
                  req.session.times=1;
             
         req.flash('success', res.__('EW0039'));
-        res.redirect('/educationhome');
+        res.redirect('/mission');
          });
           }
           else
@@ -98,7 +116,7 @@ module.exports = function(app) {
             console.log(user.times+user.username);
 
         req.flash('success', res.__('EW0039'));
-        res.redirect('/educationhome');
+        res.redirect('/mission');
           });
           }
 
@@ -428,7 +446,7 @@ module.exports = function(app) {
                   videosource: 'translation_qality_process.flv',
                   videoicon:'translation_qality_process.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
+                  
                   records: records,
                   });
                 });
@@ -538,11 +556,10 @@ module.exports = function(app) {
     req.setLocale(locale);
 
   var url= "http://localhost:8080/axis2/services/BPLoginHandler?wsdl";
-      var args={  emailAddr: req.session.user.emailAddr};
+      var args={  emailAddr: req.session.user.username};
     soap.createClient(url, function(err, client) {
     console.log(client);
     client.getProfile(args, function(err, result) {
-    console.log(result.return);
      var results=result.return.split(",");
       var info={  MGR: results[1],
                   NOTEID:results[3],
@@ -562,7 +579,6 @@ module.exports = function(app) {
             title: res.__('EW0001'),
             profileResults:profileResults,
             info:info,
-            layout:'infolayout',
           });
       });
 
@@ -594,7 +610,17 @@ module.exports = function(app) {
       });
   });
 
-
+  app.get('/onlineCourse', function(req, res) {
+        var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+            i18n.init(req, res);
+    req.setLocale(locale);
+    console.log(locale);
+      res.render('onlineCourse', {
+        title: res.__('EW0001'),
+    
+      });
+  });
 
 
   app.get('/versionRecord', function(req, res) {
@@ -615,7 +641,7 @@ module.exports = function(app) {
     req.setLocale(locale);
       res.render('aboutUS', {
         title: res.__('EW0001'),
-        layout:'infolayout',
+       
       });
   });
   

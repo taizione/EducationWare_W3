@@ -1,39 +1,86 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
-    <title><%= title %> - <%= __('EW0041')%></title>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link rel="schema.DC" href="http://purl.org/DC/elements/1.0/"/>
+  <link rel="SHORTCUT ICON" href="//www.ibm.com/favicon.ico"/>
+  <link href="http://www.ibm.com/aaa" rel="canonical" /> 
 
-    <style type="text/css">
-      body {
-        padding-top: 60px;
-        padding-bottom: 40px;
-      }
-    </style>
-    <link href="stylesheets/bootstrap-responsive.css" rel="stylesheet">
-        <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
-            <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
-    <!-- Custom styles for this template -->
-    <link href="/stylesheets/offcanvas.css" rel="stylesheet">
+  <meta name="IBM.Effective" content="2014-10-27" scheme="W3CDTF" /> 
+  <meta name="Description" content="test"  /> 
+  <meta name="DC.Subject" content="GSSC EducationWare" scheme="IBM_SubjectTaxonomy" /> 
+  <meta name="DC.Type" content="Web page" scheme="IBM_ContentClassTaxonomy" /> 
+  <meta name="DC.Date" content="2014-10-27" scheme="iso8601" /> 
+  <meta name="IBM.Expires" content="2014-10-27" scheme="W3CDTF" /> 
+  <meta name="Security" content="public"  /> 
+  <meta name="Keywords" content="GSSC Website"  /> 
+  <meta name="DC.Publisher" content="IBM Corporation" /> 
+  <meta name="Source" content="Atlas v17 template generator delivery:test authoring:test" /> 
+  <meta name="DC.Rights" content="© Copyright IBM Corp. 2014" /> 
+  <meta name="DC.Language" scheme="rfc1766" content="en-US" /> 
+  <meta name="Robots" content="noindex,follow" /> 
+  <meta name="Owner" content="Chong AG Liu/IBM" /> 
+  <meta name="IBM.Country" content="US" /> 
+  <title><%= __('EW0041')%></title>
+  <!-- <link href="//1.www.s81c.com/common/v17/css/www.css" rel="stylesheet" title="www" type="text/css" />  -->
+  <link href="/stylesheets/new_gssc.css" rel="stylesheet" title="w3" type="text/css" />
+  <link href="/stylesheets/new_gssc_0.css" rel="stylesheet" title="w3" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/ddlevelsmenu-base.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/ddlevelsmenu-topbar.css" />
+  <script src="/javascripts//new_gssc.js" type="text/javascript">//</script> 
+  <script type="text/javascript" src="/javascripts/ddlevelsmenu.js">//</script>
+  <style  type="text/css" media="all">
 
-      <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-  </head>
-  <body>
- <%- include header%>
-    <div id="container" class="container">
-      <% if (success) { %>
-        <div class="alert alert-success">
-          <%= success %>
-        </div>
-      <% } %>
-      <% if (error) { %>
-        <div class="alert alert-error">
-          <%= error %>
-        </div>
-      <% } %>
-      <%- body %>
+.tbstyle{
+  border:1px solid #0058a3; 
+  font-family:Arial, Helvetica, sans-serif;
+  border-collapse:collapse; 
     
-    </div>
+  font-size:13px;
+
+}
+.tbstyle caption{
+  padding-bottom:5px;
+  font:bold 1.4em;
+  text-align:left;
+}
+.tbstyle th{
+  border:1px solid #0058a3; 
+  background-color:#4bacff; 
+  color:#FFFFFF;        
+  font-weight:bold;
+  padding-top:4px; padding-bottom:4px;
+  padding-left:12px; padding-right:12px;
+  text-align:center;
+  
+}
+.tbstyle td{
+  border:1px solid #0058a3; 
+  text-align:left;
+  padding-top:4px; padding-bottom:4px;
+  padding-left:10px; padding-right:10px;
+  
+}
+.tbstyle tr.altrow{
+  background-color:#c7e5ff; 
+}
+.tbstyle img{ 
+  width: expression(this.width > 476? 476 : true); 
+  max-width: 476px; 
+  height: expression(this.height > 350 ? 350 : true); 
+  max-height:350px;
+}
+
+</style>
+
+</head>
+ <%- include header%>
+  <body>
+
+ <%- body %>
+    
+   
 
   </body>
     <hr/>

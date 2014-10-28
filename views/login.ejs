@@ -1,21 +1,267 @@
 
-<form class="form-horizontal" method="post">
-  <fieldset>
-    <legend><%= __('EW0002')%></legend>
-    <div class="control-group">
-      <label class="control-label" for="username"><%= __('EW0010')%></label>
-      <div class="controls">
-        <input type="text"  style="height:30px" class="input-xlarge" id="username" name="username">
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<!--
+  NOTE:
+  This file is the master landing page template.
+  All comments starting with NOTE can also be removed!
+ -->
+<meta name="Description" content="Globalization Shared Services Center Home Page." />
+<meta name="Keywords"
+  content="Globalization Shared Services Center Home Page w3 gssc.ibm.com" />
+<meta name="Owner" content="Rui Li Xu/China/IBM" />
+<meta name="Feedback" content="Rui Li Xu/China/IBM" />
+<meta name="Robots" content="index,follow" />
+<meta name="Security" content="IBM internal use only" />
+<meta name="Source" content="v8 template generator" />
+<meta name="IBM.Country" content="ZZ" />
+<meta name="DC.Date" scheme="iso8601" content="2011-02-05" />
+<meta name="DC.Language" scheme="rfc1766" content="en-US" />
+<meta name="DC.Rights" content="Copyright (c) 2001,2004 IBM Corporation" />
+<meta name="DC.Type" scheme="IBM_ContentClassTaxonomy" content="ZZ999" />
+<meta name="DC.Subject" scheme="IBM_SubjectTaxonomy" content="taxonomy" />
+<meta name="DC.Publisher" content="IBM Corporation" />
+<meta name="IBM.Effective" scheme="W3CDTF" content="2004-03-06" />
+<meta name="IBM.Industry" scheme="IBM_IndustryTaxonomy" content="ZZ" />
+<title>Authentication Required | Sign In</title>
+<!-- NOTE: link to static domain, i.e. 1.www.s81c.com -->
+<link rel="schema.DC" href="http://purl.org/DC/elements/1.0/"/>
+<link rel="SHORTCUT ICON" href="http://w3.ibm.com/favicon.ico"/>
+<link href="//1.w3.s81c.com/common/v17/css/w3.css" rel="stylesheet" title="www" type="text/css"/>
+<link href="//w3b.ibm.com/homepage/sso-overlay.css" rel="stylesheet" type="text/css" />
+<!-- NOTE: link to static domain, i.e. 1.www.s81c.com -->
+<script src="//1.w3.s81c.com/common/js/dojo/w3.js" type="text/javascript"></script>
+<script src="js/jquery-1.11.0.js" language="javascript"></script>
+
+<style type="text/css">
+legend {font-size:1.2em}
+</style>
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Cache-Control" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+
+
+<script type="text/javaScript" language="javascript">
+var lastUrl = "/";
+
+lastUrl = '/servicetypes.jsp';
+
+
+function clickSubmit() {
+  var name = document.getElementById("username").value; 
+  var pass=document.getElementById("password").value;
+  if(name.length == 0&&pass.length==0)
+  {
+        alert("Plese enter your account(intranet id) and password.");
+  }
+  else if(name.length == 0){
+    alert("Plese enter your account(intranet id).");
+  }
+  else if(pass.length==0 ){
+    alert("Plese enter your password.");
+  }
+  else
+  {   
+    $.ajax({
+         type: "GET",//使用get方法访问后台
+               dataType: "json",//返回json格式的数据
+               url: "login.action",//要访问的后台地址
+               data: "username="+name+"&password="+pass,//要发送的数据
+         success: function(result){
+         if(result['userInfo']!=null)
+         {  
+                     alert("Welcome, " + result['name']+ ".");
+                     document.location.href = lastUrl;
+         }
+         else if(result['username']==null)
+           {
+             alert("Your account does not exist.");
+           }
+           else if(result['password']==null)
+           {
+             alert("Your password is invalid.");
+         }
+         },
+         error: function(XMLHttpRequest, textStatus, errorThrown) {
+                   alert(XMLHttpRequest.status);
+                   alert(XMLHttpRequest.readyState);
+                   alert(textStatus);
+               }
+      });
+  }
+}
+
+function onCancel() {
+    document.location.href = lastUrl;
+}
+
+</script>
+<body id="ibm-com" name="ibm-com">
+<div id="ibm-top" class="ibm-popup">
+<!-- MASTHEAD_BEGIN -->
+<div id="ibm-masthead" role="banner">
+  <div class="ibm-access"><a href="#ibm-content">Skip to main content</a></div>
+  <div id="ibm-mast-options" role="toolbar">
+    <ul role="presentation">
+      <li id="ibm-home" role="presentation">
+        <a href="http://w3.ibm.com" aria-label="IBM Home page link" tabindex="0" role="button">w3</a>
+      </li>
+    </ul>
+  </div>
+  <div id="ibm-universal-nav" role="navigation" aria-label="Site map">
+    <p id="ibm-site-title">&nbsp;</p>
+    <ul id="ibm-menu-links">
+      <li><a href="http://w3.ibm.com/sitemap/us/en/">Site map</a></li>
+    </ul>
+    <div id="ibm-search-module">
+      <form method="get" action="http://w3.ibm.com/search/do/search" id="ibm-search-form">
+        <p>
+          <label for="q"><span class="ibm-access">Search</span></label>
+          <input id="q" maxlength="100" name="qt" type="text" value="" />
+          <input name="v" type="hidden" value="17"/>
+     
+          <input value="Submit" class="ibm-btn-search" id="ibm-search" type="submit"/>
+        </p>
+    </form>
+    </div>
+  </div>
+</div>
+<!-- MASTHEAD_END -->
+ 
+ 
+<div id="ibm-pcon">
+<!-- CONTENT_BEGIN -->
+<div id="ibm-content">
+
+  <!-- LEADSPACE_BEGIN -->
+  
+  <div id="ibm-leadspace-head" class="ibm-alternate" role="main" aria-label="Lead space">
+    <div id="ibm-leadspace-body">
+      <h1>Sign-in</h1> 
+    </div>
+  </div>
+  <!-- LEADSPACE_END -->
+ 
+<!-- CONTENT_BODY -->
+<div id="ibm-content-body">
+  <div id="ibm-content-main">
+ 
+ 
+ 
+    <div class="ibm-columns">
+    <div class="ibm-col-6-4">
+ 
+        <div id="loginform" >           
+ 
+          <form method="post" class="ibm-row-form ibm-styled-form" enctype="application/x-www-form-urlencoded" name="loginPage">
+           
+            <div role="region" aria-label="Login data">
+
+              <fieldset>
+                <legend style="max-width:620px;">
+                                    Please sign in using your Internet address as listed in <a href="https://w3.ibm.com/bluepages/" style="text-decoration: underline;">Blue Pages</a>.  
+                </legend>
+                <br>
+                <p>
+                  <label for="username">
+                    Intranet ID: 
+                    <span class="ibm-required">*</span> 
+                  </label>
+                    <span>
+                      <input id="username" name="username" size="30" type="text" value=""/>
+                    </span>
+                </p>
+ 
+                <p>
+                  <label for="password">
+                    Password:
+                    <span class="ibm-required">*</span>
+                  </label>
+                  <span>
+                    <input id="password" name="password"  size="30" type="password" value=""/>
+                  </span>
+                  
+                  <br />  
+                  <a href="https://w3.ibm.com/password">Forgot password?</a>
+                </p>
+
+                <input name="login-form-type" value="pwd" type="hidden"/>
+                
+                <div class="ibm-columns">
+                  <div class="ibm-col-6-1">
+                    <p>
+                
+                      <input value="Sign in" type="submit" name="ibm-submit" class="ibm-btn-pri"/>
+                    </p>
+                  </div>
+            
+                  <div class="ibm-col-6-1">  
+                    <p>
+                      <input type="button" onclick="onCancel()" name="ibm-cancel" value="Cancel"  class="ibm-btn-sec" />
+                    </p>
+                  </div>
+                </div>
+              
+              </fieldset> 
+                
+                
+            </div>
+          </form> 
+
+        </div>
       </div>
     </div>
-    <div class="control-group">
-      <label class="control-label" for="password"><%= __('EW0011')%></label>
-      <div class="controls">
-        <input type="password" style="height:30px" class="input-xlarge" height="100" id="password" name="password">
-      </div>
+ 
+ 
+    <!-- ibm-content-main -->
+    <!-- FEATURES_END -->
+    <!-- CONTENT_BODY_END -->
+  </div>
+  <!-- content sidebar starts -->
+  <div id="ibm-content-sidebar">
+    <div id="ibm-contact-module"></div>
+    <!-- IBM Contact Module -->
+    <div id="ibm-merchandising-module">
+      <!-- IBM Web Merchandising Module -->
     </div>
-    <div class="form-actions">
-      <button type="submit" class="btn btn-primary"><%= __('EW0002')%></button>
-    </div>
-  </fieldset>
-</form>
+ 
+  </div>
+  <!--content sidebar ends  -->
+</div>
+</div>
+<!-- CONTENT_END -->
+<!-- NAVIGATION_BEGIN -->
+
+<!-- SECONDARY NAVIGATION SECTION -->
+<!-- NAVIGATION_END -->
+</div>
+
+
+<div id="ibm-related-content"> 
+  <div class="ibm-columns">
+  </div>
+</div>
+
+<div id="ibm-footer-module">
+</div>
+
+<!-- FOOTER_BEGIN -->
+<div id="ibm-footer" aria-label="Footer" role="contentinfo">
+  <h2 class="ibm-access">Footer links</h2>
+  <ul>
+    <li><a href="http://w3.ibm.com/w3/info_terms_of_use.html">Terms of use</a></li>
+  </ul>
+</div>
+<div id="ibm-metrics">
+  <script src="//w3.ibm.com/w3webmetrics/js/ntpagetag.js" type="text/javascript">//</script>
+</div>
+<!-- FOOTER_END -->
+
+</body>
+</html>
