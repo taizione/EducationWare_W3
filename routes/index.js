@@ -101,7 +101,7 @@ module.exports = function(app) {
                  req.session.times=1;
             
         req.flash('success', res.__('EW0039'));
-        res.redirect('/mission');
+        res.redirect('/onlineCourse');
          });
           }
           else
@@ -116,7 +116,7 @@ module.exports = function(app) {
             console.log(user.times+user.username);
 
         req.flash('success', res.__('EW0039'));
-        res.redirect('/mission');
+        res.redirect('/onlineCourse');
           });
           }
 
@@ -276,10 +276,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('speed_kpi_definition_and_gso_project_data_collection', {
                   title:  res.__('EW0041'),
@@ -287,10 +284,10 @@ module.exports = function(app) {
                   videosource: '2014_KPI_Speed_definition_and_GSO_Project_Data_Collection.flv',
                   videoicon:'2014_KPI_Speed_definition_and_GSO_Project_Data_Collection.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
+
+                  
                   });
-                });
+             
   });
   app.get('/defect_creation_tips', checkLogin);
     app.get('/defect_creation_tips',function(req, res) {
@@ -558,8 +555,9 @@ module.exports = function(app) {
   var url= "http://localhost:8080/axis2/services/BPLoginHandler?wsdl";
       var args={  emailAddr: req.session.user.username};
     soap.createClient(url, function(err, client) {
-    console.log(client);
+    console.log(req.session.user.username);
     client.getProfile(args, function(err, result) {
+        console.log(result);
      var results=result.return.split(",");
       var info={  MGR: results[1],
                   NOTEID:results[3],
