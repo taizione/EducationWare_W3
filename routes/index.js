@@ -167,19 +167,14 @@ module.exports = function(app) {
     locale=locales[0];
             i18n.init(req, res);
     req.setLocale(locale);
-    Record.calculateTimes(function(err, records) {
-      if (err) {
-        records = [];
-      }
+
       res.render('gvtEducation', {
         title:  res.__('EW0041'),
         coursetype:"gvtEducation",
         videosource: 'GVT_Education.mp4',
         videoicon:'GVT.jpg',
         filetype:'video',
-        layout: 'mainLayout',
-        records: records,
-      });
+
     });
   });
 
@@ -189,19 +184,14 @@ module.exports = function(app) {
     locale=locales[0];
                 i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-      if (err) {
-        records = [];
-      }
+
       res.render('tvtProcess', {
         title:  res.__('EW0041'),
         coursetype:"tvtProcess",
         videosource: 'TVT Process.mp4',
         videoicon:'tvtProcess.jpg',
          filetype:'video',
-        layout: 'mainLayout',
-        records: records,
-        });
+ 
       });  
   });
 
@@ -211,19 +201,14 @@ module.exports = function(app) {
     locale=locales[0];
             i18n.init(req, res);
     req.setLocale(locale);
-  Record.calculateTimes(function(err, records) {
-    if (err) {
-               records = [];
-              }
+
               res.render('uaTools', {
               title:  res.__('EW0041'),
               coursetype:"uaTools",
               videosource: 'UA tool demo update.mp4',
               videoicon:'UATools.jpg',
                filetype:'video',
-              layout: 'mainLayout',
-              records: records,
-            });
+
       });
   });
 
@@ -233,19 +218,14 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
                 res.render('tips_for_better_doing_tvt_go_nogo_accessment', {
                   title:  res.__('EW0041'),
                   coursetype:"tips_for_better_doing_tvt_go_nogo_accessment",
                   videosource: '0627_TVT_GO-NOGO_Assessment_Education.flv',
                   videoicon:'0627_TVT_GO-NOGO_Assessment_Education.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -255,19 +235,14 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
                 res.render('gvt_ta_example_sharing', {
                   title:  res.__('EW0041'),
                   coursetype:"gvt_ta_example_sharing",
                   videosource: '0627_GVT_TestArea_Example_Sharing.flv',
                   videoicon:'0627_GVT_TestArea_Example_Sharing.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+  
                 });
   });
   app.get('/speed_kpi_definition_and_gso_project_data_collection', checkLogin);
@@ -295,10 +270,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('defect_creation_tips', {
                   title:  res.__('EW0041'),
@@ -306,9 +278,7 @@ module.exports = function(app) {
                   videosource: 'GSSC_Defect_Creation_Tips.flv',
                   videoicon:'GSSC_Defect_Creation_Tips.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -318,19 +288,14 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
                 res.render('demo_testcase_creation_tool', {
                   title:  res.__('EW0041'),
                   coursetype:"demo_testcase_creation_tool",
                   videosource: 'Demo_TestCaseCreationTool.flv',
                   videoicon:'Demo_TestCaseCreationTool.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -340,10 +305,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('dbs_enhancements', {
                   title:  res.__('EW0041'),
@@ -351,9 +313,7 @@ module.exports = function(app) {
                   videosource: '0725_2014_1H_DBs_Enhancements.mp3',
                   videoicon:'0725_2014_1H_DBs_Enhancements.jpg',
                    filetype:'audio',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -363,10 +323,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('gvt_in_cd_Process', {
                   title:  res.__('EW0041'),
@@ -374,9 +331,7 @@ module.exports = function(app) {
                   videosource: '0725_GVT_in_CD_Process.mp3',
                   videoicon:'0725_GVT_in_CD_Process.jpg',
                    filetype:'audio',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -386,10 +341,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('gb18030', {
                   title:  res.__('EW0041'),
@@ -397,9 +349,8 @@ module.exports = function(app) {
                   videosource: 'gb18030.mp3',
                   videoicon:'gb18030.jpg',
                    filetype:'audio',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
+               
                 });
   });
 
@@ -409,10 +360,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('how_to_write_wellconveived_technical_documentation', {
                   title:  res.__('EW0041'),
@@ -420,9 +368,7 @@ module.exports = function(app) {
                   videosource: 'how_to_write_wellconveived_technical_documentation.mp3',
                   videoicon:'how_to_write_wellconveived_technical_documentation.jpg',
                    filetype:'audio',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -432,10 +378,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('translation_qality_process', {
                   title:  res.__('EW0041'),
@@ -444,8 +387,7 @@ module.exports = function(app) {
                   videoicon:'translation_qality_process.jpg',
                    filetype:'video',
                   
-                  records: records,
-                  });
+
                 });
   });
 
@@ -455,10 +397,7 @@ module.exports = function(app) {
     locale=locales[0];
               i18n.init(req, res);
     req.setLocale(locale);
-      Record.calculateTimes(function(err, records) {
-                if (err) {
-                  records = [];
-                }
+
 
                 res.render('sniff_gvt_for_bluemix', {
                   title:  res.__('EW0041'),
@@ -466,9 +405,7 @@ module.exports = function(app) {
                   videosource: 'sniff_gvt_for_bluemix.flv',
                   videoicon:'sniff_gvt_for_bluemix.jpg',
                    filetype:'video',
-                  layout: 'mainLayout',
-                  records: records,
-                  });
+
                 });
   });
 
@@ -526,23 +463,16 @@ module.exports = function(app) {
     })
  });
 
-  app.get('/say', checkLogin);
-  app.get('/say', function(req, res) {
+  app.get('/contactUS', checkLogin);
+  app.get('/contactUS', function(req, res) {
         var locales=req.headers['accept-language'].split(",");
     locale=locales[0];
 
             i18n.init(req, res);
     req.setLocale(locale);
-    Post.get(null, function(err, posts) {
-      if (err) {
-        posts = [];
-      }
-      console.log("posts"+posts);
-      res.render('say', {
+      res.render('contactUS', {
         title:  res.__('EW0001'),
-        posts: posts,
-        layout: 'infolayout',
-      });
+
     });
   });
   app.get('/profile', checkLogin);

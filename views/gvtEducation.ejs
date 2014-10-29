@@ -1,162 +1,29 @@
-<script type="text/javascript">
-		var a=0;
-		function quiz_show()
-		{
-
-
-
-     if(a==1) { document.getElementById("div").style.display="none"; a=0;}
-     else{
-    
-		document.getElementById("div").style.display="";
-    a=1;
-		}}
-		
-		function answer_show()
-		{
-      var score=0;
-      var message="";
-
-   
-
-     if(!document.getElementById("question1_B").checked) 
-
-      {score++;message=message+"question1 is wrong\n";}
-     
-
-      if(!document.getElementById("question2_C").checked) {score++;message=message+"question2 is wrong\n";}
-
-      if(!document.getElementById("question3_C").checked) {score++;message=message+"question3 is wrong\n";}
-
-      if(!((!document.getElementById("question4_A").checked)&&(document.getElementById("question4_B").checked)&&(document.getElementById("question4_C").checked)&&(!document.getElementById("question4_D")))) {score++;message=message+"question4 is wrong \n";}
-
-      if(!document.getElementById("question5_C").checked) {score++;message=message+"question5 is wrong\n";}
-      if(!document.getElementById("question6_D").checked) {score++;message=message+"question6 is wrong\n";}
-
-      if(score==0)  alert("FULL SCORE!!! Congratulations!!!");
-      else
-      alert("your score is "+(6-score)+" in all, the detail is below\n"+message);
-
-
-
-
-		document.getElementById("answer1").style.display="";
-		document.getElementById("answer2").style.display="";
-    document.getElementById("answer3").style.display="";
-    document.getElementById("answer4").style.display="";
-    document.getElementById("answer5").style.display="";
-    document.getElementById("answer6").style.display="";
-		}
-
-    function reset_show()
-    {
-    document.getElementById("answer1").style.display="none";
-    document.getElementById("answer2").style.display="none";
-    document.getElementById("answer3").style.display="none";
-    document.getElementById("answer4").style.display="none";
-    document.getElementById("answer5").style.display="none";
-    document.getElementById("answer6").style.display="none";
-
-  var  getCK=document.getElementsByTagName('input');  
-  var   j=0;  
-   
-  for(var   i=0;i<getCK.length;i++)  
-  {  
-      whichObj=getCK[i];  
-      if(whichObj.type=="checkbox"||"radio")  
-      {  
-          whichObj.checked=false;  
+<!-- LEADSPACE_BEGIN -->
+<div id="ibm-leadspace-head" class="ibm-alternate-background">
+<div id="ibm-leadspace-body">
+<ul id="ibm-navigation-trail">
+          <li class="ibm-first"><a href="">GSSC Education Home</a></li>
+          <li><a href="/onlineCourse">Online Course</a></li>
           
-      }  
-  }   
+ <!--          <li><a href="">bbb</a></li>
+         <li><a href="">XXXXX</a></li>
+-->         
+ </ul> 
+<h1>GVT Process</h1>
+</div>
+</div>
+<!-- LEADSPACE_END -->
+ <div id="ibm-pcon">
+<!-- CONTENT_BEGIN -->
+<div id="ibm-content">
 
-    }
+ <%- include videoPlayLayout%>
 
-  </script>
-
-
-<div>
 <b><%= __('EW0044')%></b><li>
 Vincent Chen<br>
 <b><%= __('EW0045')%></b>  <li>
 TSEs and Test Leads<br>
-
 </div>
-<p align="center">
-  <a class="btn btn-primary btn-large" onclick="quiz_show()">Quiz</a>
-</p>
-<!--Question 1-->
-  <div id="div" style="display:none">
-  <label for="question1" align="left">1.If an IBM product will be translated into 10 languages, according to IBM Globalization White Paper, it only needs to support the cultural formats and characters for these 10 languages.</label><li>
-  <input type="radio" id="question1_A" value="question1_A"  name="question1"/>a.True<li>
-  <input type="radio" id="question1_B" value="question1_B" name="question1"/>b.False<li>
-  <input type="radio" id="question1_C" value="question1_C" name="question1"/>c.Depends on the product<li>
-  <label id="answer1" style="display: none"><span style="color:red">Answer: (b)
-<p>Explanation: A full G11n enabled product should support all languages listed in GWP.</p></span></label><li>
-
-  <!--Question 2-->
-
-    <label for="question2" align="left">2.If the product is translated into 10 languages, I need to repeat the same test on all 10 languages to fully cover the testing scope.</label><li>
-  <input type="radio" id="question2_A" value="question2_A"  name="question2"/>a.True<li>
-    <input type="radio" id="question2_B" value="question2_B" name="question2"/>b.False<li>
-  <input type="radio" id="question2_C" value="question2_C" name="question2"/>c.Depends on the product and globalization test area<li>
-  
-  <label id="answer2"style="display: none" ><span style="color:red">Answer: (c)
-    <p>Explanation: Only some specific tests are repeated in multiple locales. Many tests are independent of the locale. Some products does not support Unicode, which need some extra test.</p></span></label><li>
-
-
-  <!--Question 3-->
-
-    <label for="question3" align="left">3.Which one below is classified as globalization enablement defect (not translatability)? </label><li>
-  <input type="radio"  id="question3_A" value="question3_A"  name="question3"/>a.English strings is hardcoded<li>
-    <input type="radio" id="question3_B" value="question3_B" name="question3"/>b.Sentences are composed by multiple PII strings<li>
-  <input type="radio" id="question3_C" value="question3_C" name="question3"/>c.Date/Time format does not honor user locale<li>
-    <input type="radio" id="question3_D" value="question3_D" name="question3"/>d.The strings displayed on the GUI is truncated<li>
-  
-  <label id="answer3"style="display: none" ><span style="color:red">Answer: (c)</span></label><li>
-
-  <!--Question 4-->
-    <label for="question4" align="left">4.If a correct Full-Width pseudo translation looks like this: <li>
-[G'ａｂｃｄｅｆｇｈｉｊｋlmnopqrstuvwxyzİı｜]<li>
-When you see a pseudo translation displayed on the GUI like below:<li>
-[G Ｉｎｐｕｔ your İı｜] [G' ｎａｍｅ İı｜] [G ｉｎ ｔｈｅ field İı｜] <li>
-What kind of defect does it imply? (Select all which applies)<li></label><li>
-
-  <input type="checkbox" id="question4_A" value="question4_A"  name="question4"/>a.Hardcoded<li>
-    <input type="checkbox" id="question4_B" value="question4_B" name="question4"/>b.Concatenation<li>
-  <input type="checkbox" id="question4_C" value="question4_C" name="question4"/>c.Apostrophe cannot be displayed correctly<li>
-    <input type="checkbox" id="question4_D" value="question4_D" name="question4"/>d.Garbage characters (corruption)<li>
-  
-  <label id="answer4"style="display: none" ><span style="color:red">Answer: (b)(c)</span></label><li>
-
-  <!--Question 5-->
-    <label for="question5" align="left">5.Which of the following tells you WHAT need to be tested for a product? 
-</label><li>
-
-  <input type="radio" id="question5_A" value="question5_A"  name="question5"/>a.Globalization White Paper (GWP)<li>
-    <input type="radio" id="question5_B" value="question5_B" name="question5"/>b.GVT Guide<li>
-  <input type="radio" id="question5_C" value="question5_C" name="question5"/>c.GVT Wizard<li>
-    <input type="radio" id="question5_D" value="question5_D" name="question5"/>d.Globalization Implementation Guide<li>
-  
-  <label id="answer5"style="display: none" ><span style="color:red">Answer: (c)</span></label><li>
-
-
-  <!--Question 6-->
-    <label for="question6" align="left">6.If a product support Windows 7, Linux and AIX, which platform(s) need to be covered in GVT? 
-</label><li>
-
-  <input type="radio" id="question6_A" value="question6_A" name="question6"/>a.Windows only<li>
-    <input type="radio" id="question6_B" value="question6_B" name="question6"/>b.Windows + AIX<li>
-  <input type="radio" id="question6_B" value="question6_C" name="question6"/>c.All three of them<li>
-    <input type="radio" id="question6_D" value="question6_D" name="question6"/>d.Depends on products and should discuss with Dev team<li>
-  
-  <label id="answer6"style="display: none" ><span style="color:red">Answer: (d)</span></label><li>
-
-
-
-
-<a class="btn btn-primary btn-large" onclick="answer_show()">Check Result</a>
-<a class="btn btn-primary btn-large" onclick="reset_show()">Reset</a>
-
 </div>
-          
+</div>
+</div>
