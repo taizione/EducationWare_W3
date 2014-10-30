@@ -72,7 +72,7 @@ module.exports = function(app) {
     var args={  emailAddr: req.body.username,
                 password: req.body.password};
     soap.createClient(url, function(err, client) {
-     console.log(args);
+     // console.log(args);
     client.auth(args, function(err, result) {
     console.log(result.return);
       if(result.return==0)
