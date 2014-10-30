@@ -1,0 +1,30 @@
+<ul id="ulcontent14px">			
+
+				<!-- New table start -->
+							   
+				 <table class="tbstyle">
+				      <tr>
+				   <!-- <td width="10%"><span id="subcontitle">Datetime</span></td>-->
+					 <td width="10%"><span id="subcontitle">Completed Course</span></td>
+					 <td width="20%"><span id="subcontitle">Times</span></td>
+					 </tr>
+
+
+				      <tr valign="top">
+
+				      <% profileResults.forEach(function(profileResult, index) { 
+  %>
+
+<td><UL id="ulcontentplan">
+           <li><%= profileResult.coursename %></li></UL></td>
+           <td>
+            <p class="text-left"><i class="icon-flag"></i><%= profileResult.times %></p>
+</td>
+
+<%}) %>
+
+			 </tr>
+				 
+				  </table>
+				  </ul>
+				   

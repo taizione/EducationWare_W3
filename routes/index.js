@@ -72,7 +72,7 @@ module.exports = function(app) {
     var args={  emailAddr: req.body.username,
                 password: req.body.password};
     soap.createClient(url, function(err, client) {
-    // console.log(client);
+     console.log(args);
     client.auth(args, function(err, result) {
     console.log(result.return);
       if(result.return==0)
@@ -99,7 +99,8 @@ module.exports = function(app) {
            
                 req.session.user=user;
                  req.session.times=1;
-            
+                       console.log("000001111");
+                   res.send("0");
         req.flash('success', res.__('EW0039'));
         res.redirect('/onlineCourse');
          });
@@ -113,9 +114,12 @@ module.exports = function(app) {
                   }
             console.log(user);
             req.session.user=user;
-            console.log(user.times+user.username);
-
-        req.flash('success', res.__('EW0039'));
+            console.log(user.times+user.username+"00000");
+      //       res.send('[{"demoData":"This Is The JSON Data"}]');
+      // // res.json({success:1});
+      // // var aa="1";
+      // //   res.send(aa.callback);
+      //   // req.flash('success', res.__('EW0039'));
         res.redirect('/onlineCourse');
           });
           }
@@ -559,7 +563,7 @@ module.exports = function(app) {
     console.log(locale);
       res.render('versionRecord', {
         title: res.__('EW0001'),
-        layout:'infolayout',
+
       });
   });
     app.get('/aboutUs', function(req, res) {

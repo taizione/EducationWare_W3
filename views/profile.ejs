@@ -1,3 +1,7 @@
+
+
+
+
  <!-- LEADSPACE_BEGIN -->
 <div id="ibm-leadspace-head" class="ibm-alternate-background">
 <div id="ibm-leadspace-body">
@@ -9,7 +13,7 @@
          <li><a href="">XXXXX</a></li>
 -->         
           </ul> 
-<h1>Personal Center</h1>
+<h1>Footprint</h1>
 </div>
 </div>
 <!-- LEADSPACE_END -->
@@ -21,53 +25,14 @@
 
 <div id="ibm-content-body">
 <div id="ibm-content-main">
+<ul style="list-style-type:none;font:Arial, Helvetica, sans-serif;font-size:12px;">           
+          Congratulations! Your completed course is in the table below.
+ <p></p>
+       <%- include footprint%>
+          <br/>
 
+<br />
 
-<b><font color="blue"><h1><%= __('EW0015')%></h1></font></b>
-        <div class="col-lg-6">
-          <label for="ideaTitle"><b><%= __('EW0016')%></b></label>
-          <p><%= info.NAME %></p>
-
-          <label for="ideaTitle"><b><%= __('EW0017')%></b></label>
-          <p><%= info.COUNTRY %></p>
-
-          <label for="ideaTitle"><b><%= __('EW0018')%></b></label>
-          <p><%= info.CNUM %></p>
-          <label for="ideaTitle"><b><%= __('EW0019')%></b></label>
-          <p><%= info.JOBRESPONSIB %></p>
-        </div>
-
-        <div class="col-lg-6">
-         <label for="ideaTitle"><b><%= __('EW0020')%></b></label>
-          <p><%= info.MGR %></p>
-
-         <label for="ideaTitle"><b><%= __('EW0021')%></b></label>
-          <p><%= info.XPHONE %></p>
-
-         <label for="ideaTitle"><b><%= __('EW0022')%></b></label>
-          <p><%= info.NOTEID %></p>
-        </div>
-        
-      </div>
-       <hr>
-<div class="row marketing">
-<b><font color="blue"><h1><%= __('EW0023')%></h1></font></b>
-      <div class="col-lg-6">
-
-
-<% profileResults.forEach(function(profileResult, index) { 
-  %>
-
-    <div class="row" >
-        <div class="span4">
-            <p class="text-left"> <i class="icon-star"></i><b><%= __('EW0024')%></b><%= profileResult.coursename %></p>
-            <p class="text-left"><i class="icon-flag"></i><b><%= __('EW0025')%></b><%= profileResult.times %></p>
-        </div>
-    </div><!-- end row -->
-      <hr>
-<%}) %>
-</div>
-</div>
-</div>
-</div>
-</div>
+  
+         
+</div></div></div></div>
