@@ -1,9 +1,10 @@
 var mongodb = require('./db');
 
-function Record(username,coursename,times) {
+function Record(username,coursename,times,dates) {
   this.user = username;
   this.coursename=coursename;
   this.times=times;
+  this.dates=dates;
 };
 
 
@@ -15,6 +16,8 @@ Record.prototype.save = function save(callback) {
     user: this.user,
     coursename: this.coursename,
     times: 1,
+    dates:new Date(),
+
   };
   mongodb.open(function(err, db) {
     if (err) {
@@ -57,8 +60,9 @@ Record.prototype.update = function update(callback) {
         mongodb.close();
         return callback(err);
       }
-      
-      collection.update(record, {$inc: {times:1}}, function(err, record) {
+      console.log("here");
+      collection.update(record, {$inc: {times:1}, $set:{dates:new Date()}}, function(err, record) {
+          console.log("there");
         mongodb.close();
         callback(err, record);
       });
@@ -170,7 +174,7 @@ mongodb.close();
         // 封裝 posts 爲 Post 對象
         var records = [];
         docs.forEach(function(doc, index) {
-          var record = new Record(doc.username,doc.coursename,doc.times);
+          var record = new Record(doc.username,doc.coursename,doc.times,doc.dates);
           records.push(record);
           console.log("record"+record.username+record.coursename+record.times);
         });

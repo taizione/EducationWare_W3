@@ -435,10 +435,10 @@ module.exports = function(app) {
 
   var coursename=req.query.coursename;
   var currentUser = req.session.user;
-  console.log(coursename+ "abc"+currentUser.emailAddr);
-    Record.get(currentUser.emailAddr,coursename,function(error,result){
+  console.log(coursename+ "abc"+currentUser.username);
+    Record.get(currentUser.username,coursename,function(error,result){
 
-      var record = new Record(currentUser.emailAddr, coursename);
+      var record = new Record(currentUser.username, coursename);
 
       if(!result)
         {
@@ -449,7 +449,7 @@ module.exports = function(app) {
                   return res.redirect('/');
                 }
                 // req.flash('success', '记录成功');
-                res.redirect('/u/' + currentUser.emailAddr);
+                res.redirect('/u/' + currentUser.username);
               });
        }
        else{
@@ -461,7 +461,7 @@ module.exports = function(app) {
                 }
                 // req.flash('success', '更新成功');
                 console.log("update success");
-                res.redirect('/u/' + currentUser.emailAddr);
+                res.redirect('/u/' + currentUser.username);
               });
        }
     })
@@ -502,7 +502,7 @@ module.exports = function(app) {
                   CNUM:results[14].substring(0,6)};
 
     var currentUser = req.session.user;
-   
+
         Record.list(currentUser.username, function(err, profileResults) {
           if (err) {
             profileResults = [];
