@@ -67,14 +67,20 @@ function clickSubmit() {
   }
   else
   {   
-
+   alert(bbb);
     $.ajax({
-         type: "get",//使用get方法访问后台
-               dataType: "json",//返回json格式的数据
+         type: "post",//使用get方法访问后台
+               // dataType: "json",//返回json格式的数据
                url: "/login",//要访问的后台地址
                data: "username="+name+"&password="+pass,//要发送的数据
+         
+         error: function(XMLHttpRequest, textStatus, errorThrown) {
+                   alert(XMLHttpRequest.status);
+                   alert(XMLHttpRequest.readyState);
+                   alert(textStatus);
+               },
          success: function(result){
-
+alert(aaa);
        
          if(result=="0")
          {  alert(1112);
@@ -89,12 +95,8 @@ function clickSubmit() {
            {
              alert("Your password is invalid.");
          }
-         },
-         error: function(XMLHttpRequest, textStatus, errorThrown) {
-                   alert(XMLHttpRequest.status);
-                   alert(XMLHttpRequest.readyState);
-                   alert(textStatus);
-               }
+         }
+
       });
   }
 }

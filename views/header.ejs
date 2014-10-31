@@ -8,13 +8,13 @@
                 <% if (!user) { %>
                   <li><a href="/login"><%= __('EW0002')%></a></li>
                 <% } else { %>
-                  <li>Welcome <%=user.username%><a href="/logout">|<%= __('EW0004')%></a></li>
+                  <li>Welcome <%=user.username%>(<%=user.times%>)<a href="/logout">|<%= __('EW0004')%></a></li>
                 <% } %>
 </ul>
 </div>
 <div id="ibm-universal-nav" >
 <ul id="ibm-unav-links" >
-<li id="ibm-home"><a href="http://www.ibm.com/us/en/">IBM®</a></li>
+<li id="ibm-home"><a href="http://www.ibm.com/us/en/">IBM</a></li>
 </ul>
   <div id="ibm-menu-links">
   <ul>

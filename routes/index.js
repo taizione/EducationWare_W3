@@ -115,10 +115,10 @@ module.exports = function(app) {
             console.log(user);
             req.session.user=user;
             console.log(user.times+user.username+"00000");
-      //       res.send('[{"demoData":"This Is The JSON Data"}]');
-      // // res.json({success:1});
+     //res.send(400,'this is a error');
+      // res.json({success:1});
       // // var aa="1";
-      // //   res.send(aa.callback);
+         // res.end(200);
       //   // req.flash('success', res.__('EW0039'));
         res.redirect('/onlineCourse');
           });
