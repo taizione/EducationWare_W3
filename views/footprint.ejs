@@ -10,20 +10,20 @@
 					 </tr>
 
 
-				      <tr valign="top">
+				      
 
 				      <% profileResults.forEach(function(profileResult, index) { 
   %>
-
+<tr valign="top">
 <td><UL id="ulcontentplan">
            <li><a href="/<%= profileResult.coursename %>"><%= profileResult.coursename %></a></li></UL></td>
            <td>
             <p class="text-left"><i class="icon-flag"></i><%= profileResult.times %></p>
 </td>
-
+</tr>
 <%}) %>
 
-			 </tr>
+			 
 				 
 				  </table>
 				  </ul>

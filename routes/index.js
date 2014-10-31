@@ -502,7 +502,8 @@ module.exports = function(app) {
                   CNUM:results[14].substring(0,6)};
 
     var currentUser = req.session.user;
-        Record.list(currentUser.emailAddr, function(err, profileResults) {
+   
+        Record.list(currentUser.username, function(err, profileResults) {
           if (err) {
             profileResults = [];
           }
