@@ -12,27 +12,30 @@
 					    <td >
 						 	
 								<UL id="ulcontentplan">
+								<ol style="margin-left:0px">
 								<% if(records["gvtEducation"]==undefined) records["gvtEducation"]=0 %>
-					              <li>GVT Process<a href="/gvtEducation"><img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["gvtEducation"]%>)</font></li>
-
+					              <li><a href="/gvtEducation">GVT Process<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["gvtEducation"]%>)</font></li>
+					              		</ol>
 								  </UL>
 							
 						</td>
 					    <td >
 						 
 								 <UL id="ulcontentplan">
+								 <ol style="margin-left:0px">
 								 <% if(records["tvtProcess"]==undefined) records["tvtProcess"]=0 %>
-					              <li>TVT Process<a href="/tvtProcess"><img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["tvtProcess"]%>)</font></li>
-
+					              <li><a href="/tvtProcess">TVT Process<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["tvtProcess"]%>)</font></li>
+					              </ol>
 					            </UL>
 						
 						</td>
 						<td >
 						   
 							<UL id="ulcontentplan">
+							<ol style="margin-left:0px">
 							<% if(records["uaTools"]==undefined) records["uaTools"]=0 %>
-					              <li>UA Tools<a href="/uaTools"><img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["uaTools"]%>)</font></li>
-
+					              <li><a href="/uaTools">UA Tools<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["uaTools"]%>)</font></li>
+					             </ol>
 					             </UL>
 						</td>
 						
