@@ -413,6 +413,113 @@ module.exports = function(app) {
                 });
   });
 
+                  app.get('/gb18030_compliance_test', checkLogin);
+    app.get('/gb18030_compliance_test',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('gb18030_compliance_test', {
+                  title:  res.__('EW0041'),
+                  coursetype:"gb18030_compliance_test",
+                  videosource: 'gb18030_compliance_test.flv',
+                  videoicon:'gb18030_compliance_test.jpg',
+                   filetype:'video',
+
+                });
+  });
+                      app.get('/2014_taiwan_technical_leadership_exchange', checkLogin);
+    app.get('/2014_taiwan_technical_leadership_exchange',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('2014_taiwan_technical_leadership_exchange', {
+                  title:  res.__('EW0041'),
+                  coursetype:"2014_taiwan_technical_leadership_exchange",
+                  videosource: '2014_taiwan_technical_leadership_exchange.mp3',
+                  videoicon:'2014_taiwan_technical_leadership_exchange.jpg',
+                   filetype:'audio',
+
+                });
+  });
+
+                          app.get('/g11n_tools_awards_and_ram_introduction', checkLogin);
+    app.get('/g11n_tools_awards_and_ram_introduction',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('g11n_tools_awards_and_ram_introduction', {
+                  title:  res.__('EW0041'),
+                  coursetype:"g11n_tools_awards_and_ram_introduction",
+                  videosource: 'g11n_tools_awards_and_ram_introduction.mp3',
+                  videoicon:'g11n_tools_awards_and_ram_introduction.jpg',
+                   filetype:'audio',
+
+                });
+  });
+
+                              app.get('/gbms_dou_tool_education_for_gssc', checkLogin);
+    app.get('/gbms_dou_tool_education_for_gssc',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('gbms_dou_tool_education_for_gssc', {
+                  title:  res.__('EW0041'),
+                  coursetype:"gbms_dou_tool_education_for_gssc",
+                  videosource: 'gbms_dou_tool_education_for_gssc.flv',
+                  videoicon:'gbms_dou_tool_education_for_gssc.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+                                  app.get('/workshopopening', checkLogin);
+    app.get('/workshopopening',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('workshopopening', {
+                  title:  res.__('EW0041'),
+                  coursetype:"workshopopening",
+                  videosource: 'workshopopening.mp3',
+                  videoicon:'workshopopening.jpg',
+                   filetype:'audio',
+
+                });
+  });
+
+                                      app.get('/srat_session_1', checkLogin);
+    app.get('/srat_session_1',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('srat_session_1', {
+                  title:  res.__('EW0041'),
+                  coursetype:"srat_session_1",
+                  videosource: 'srat_session_1.flv',
+                  videoicon:'srat_session_1.jpg',
+                   filetype:'video',
+
+                });
+  });
+
 
 
   app.get('/logout', checkLogin);
@@ -467,7 +574,6 @@ module.exports = function(app) {
     })
  });
 
-  app.get('/contactUS', checkLogin);
   app.get('/contactUS', function(req, res) {
         var locales=req.headers['accept-language'].split(",");
     locale=locales[0];
@@ -578,26 +684,6 @@ module.exports = function(app) {
       });
   });
   
-  // app.get('/u/:user', function(req, res) {
-  //           i18n.init(req, res);
-  //   req.setLocale(locale);
-  //   User.get(req.params.user, function(err, user) {
-  //     if (!user) {
-  //       req.flash('error', '用户不存在');
-  //       return res.redirect('/');
-  //     }
-  //     Post.get(user.name, function(err, posts) {
-  //       if (err) {
-  //         req.flash('error', err);
-  //         return res.redirect('/');
-  //       }
-  //       res.render('user', {
-  //         title: user.name,
-  //         posts: posts,
-  //       });
-  //     });
-  //   });
-  //   });
   
   app.post('/postIdea', checkLogin);
   app.post('/postIdea', function(req, res) {

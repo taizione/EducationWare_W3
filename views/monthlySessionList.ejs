@@ -58,7 +58,7 @@
 				     <tr>
 				    <td ><span id="subcontitle"> 08/08 13:00-15:00</span>	</td>
 					 <td><span id="subcontitle"> 08/15 14:00-16:00 </span>	</td>
-					 <td><span id="subcontitle">Incoming</span>		 </td>
+					 <td><span id="subcontitle"> 08/21 13:00 - 14:00</span>  </td>
 					 </tr>
 					 
 				  <tr  valign="top">
@@ -88,12 +88,57 @@
 					 </td>
 					<td>
 								
-							<UL id="ulcontentplan">
-
+				 <UL id="ulcontentplan">
+					<ol style="margin-left:0px">
+							<% if(records["gb18030_compliance_test"]==undefined) records["gb18030_compliance_test"]=0 %>
+				              <li><a href="/gb18030_compliance_test">GB18030 Compliance Test<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["gb18030_compliance_test"]%>)</font></li>
+				              
+							 </ol>
 							 
-							  </UL>	
-									
-									 </td>
+						</UL>	
+						 </td>
+				 </tr>
+
+
+				  <tr>
+				    <td ><span id="subcontitle"> 08/29 14:00 - 16:30</span>	</td>
+					 <td><span id="subcontitle"> 09/05 14:00 - 16:00 </span>	</td>
+					 <td><span id="subcontitle"> 09/16 14:00 - 15:00</span>  </td>
+					 </tr>
+					 
+				  <tr  valign="top">
+				    <td>
+					
+					  <UL id="ulcontentplan">
+					  <ol style="margin-left:0px">
+					 		  <% if(records["2014_taiwan_technical_leadership_exchange"]==undefined) records["2014_taiwan_technical_leadership_exchange"]=0 %>
+				              <li><a href="/2014_taiwan_technical_leadership_exchange">2014 Taiwan Technical Leadership Exchange - Knowledge sharing<img src="/img/radio.jpg" class="img-rounded"></a><font color="red">(<%= records["2014_taiwan_technical_leadership_exchange"]%>)</font></li>
+							   </ol>
+							
+							</UL>
+						</td>
+						 <td>
+					<UL id="ulcontentplan">
+					<ol style="margin-left:0px">
+							<% if(records["g11n_tools_awards_and_ram_introduction"]==undefined) records["g11n_tools_awards_and_ram_introduction"]=0 %>
+				              <li><a href="/g11n_tools_awards_and_ram_introduction">G11N Tools Awards and RAM introduction<img src="/img/radio.jpg" class="img-rounded"></a><font color="red">(<%= records["g11n_tools_awards_and_ram_introduction"]%>)</font></li>
+				              
+							   </ol>
+							
+					</UL>
+							  
+					 </td>
+					<td>
+								
+				 <UL id="ulcontentplan">
+					<ol style="margin-left:0px">
+							<% if(records["gbms_dou_tool_education_for_gssc"]==undefined) records["gbms_dou_tool_education_for_gssc"]=0 %>
+				              <li><a href="/gbms_dou_tool_education_for_gssc">GBMS DOU Tool Education for GSSC<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["gbms_dou_tool_education_for_gssc"]%>)</font></li>
+				              
+							 </ol>
+							 
+						</UL>	
+						 </td>
 				 </tr>
 				 
 				  </table>
