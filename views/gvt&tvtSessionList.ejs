@@ -1,10 +1,10 @@
 				  <ul id="ulcontent14px">	
-				<b>GVT&TVT Education</b>
+				<b>Others</b>
 					<table class="tbstyle">
 					      <tr>
 					    <td width="800"><span id="subcontitle">GVT</span></td>
 						 <td width="30%"><span id="subcontitle">TVT</span></td>
-						 <td width="800px"><span id="subcontitle">Others</span></td>
+						 <td width="800px"><span id="subcontitle">Bluemix</span></td>
 						 </tr>
 
 
@@ -25,6 +25,9 @@
 								 <ol style="margin-left:0px">
 								 <% if(records["tvtProcess"]==undefined) records["tvtProcess"]=0 %>
 					              <li><a href="/tvtProcess">TVT Process<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["tvtProcess"]%>)</font></li>
+
+					              <% if(records["uaTools"]==undefined) records["uaTools"]=0 %>
+					              <li><a href="/uaTools">UA Tools<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["uaTools"]%>)</font></li>
 					              </ol>
 					            </UL>
 						
@@ -33,8 +36,8 @@
 						   
 							<UL id="ulcontentplan">
 							<ol style="margin-left:0px">
-							<% if(records["uaTools"]==undefined) records["uaTools"]=0 %>
-					              <li><a href="/uaTools">UA Tools<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["uaTools"]%>)</font></li>
+							<% if(records["bluemix_demo"]==undefined) records["bluemix_demo"]=0 %>
+					              <li><a href="/bluemix_demo">Bluemix Demo<img src="/img/video.jpg" class="img-rounded"></a><font color="red">(<%= records["bluemix_demo"]%>)</font></li>
 					             </ol>
 					             </UL>
 						</td>

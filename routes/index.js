@@ -520,6 +520,24 @@ module.exports = function(app) {
                 });
   });
 
+  app.get('/bluemix_demo', checkLogin);
+    app.get('/bluemix_demo',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('bluemix_demo', {
+                  title:  res.__('EW0041'),
+                  coursetype:"bluemix_demo",
+                  videosource: 'bluemix_demo.mp4',
+                  videoicon:'bluemix_demo.jpg',
+                   filetype:'video',
+
+                });
+  });
+
 
 
   app.get('/logout', checkLogin);
