@@ -538,6 +538,114 @@ module.exports = function(app) {
                 });
   });
 
+      app.get('/bidi_testing_in_gvt', checkLogin);
+    app.get('/bidi_testing_in_gvt',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('bidi_testing_in_gvt', {
+                  title:  res.__('EW0041'),
+                  coursetype:"bidi_testing_in_gvt",
+                  videosource: 'bidi_testing_in_gvt.flv',
+                  videoicon:'bidi_testing_in_gvt.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+          app.get('/project_control_and_support_center', checkLogin);
+    app.get('/project_control_and_support_center',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('project_control_and_support_center', {
+                  title:  res.__('EW0041'),
+                  coursetype:"project_control_and_support_center",
+                  videosource: 'project_control_and_support_center.flv',
+                  videoicon:'project_control_and_support_center.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+              app.get('/pm3e', checkLogin);
+    app.get('/pm3e',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('pm3e', {
+                  title:  res.__('EW0041'),
+                  coursetype:"pm3e",
+                  videosource: 'pm3e.flv',
+                  videoicon:'pm3e.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+    app.get('/1t1p_translation_tool', checkLogin);
+    app.get('/1t1p_translation_tool',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('1t1p_translation_tool', {
+                  title:  res.__('EW0041'),
+                  coursetype:"1t1p_translation_tool",
+                  videosource: '1t1p_translation_tool.flv',
+                  videoicon:'1t1p_translation_tool.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+        app.get('/mtp_cfm_team_sharing', checkLogin);
+    app.get('/mtp_cfm_team_sharing',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('mtp_cfm_team_sharing', {
+                  title:  res.__('EW0041'),
+                  coursetype:"mtp_cfm_team_sharing",
+                  videosource: 'mtp_cfm_team_sharing.mp3',
+                  videoicon:'mtp_cfm_team_sharing.jpg',
+                   filetype:'radio',
+
+                });
+  });
+
+            app.get('/open_tm2', checkLogin);
+    app.get('/open_tm2',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('open_tm2', {
+                  title:  res.__('EW0041'),
+                  coursetype:"open_tm2",
+                  videosource: 'open_tm2.mp3',
+                  videoicon:'open_tm2.jpg',
+                   filetype:'radio',
+
+                });
+  });
+
 
 
   app.get('/logout', checkLogin);
@@ -610,20 +718,20 @@ module.exports = function(app) {
               i18n.init(req, res);
     req.setLocale(locale);
 
-  var url= "http://localhost:8080/axis2/services/BPLoginHandler?wsdl";
-      var args={  emailAddr: req.session.user.username};
-    soap.createClient(url, function(err, client) {
-    console.log(req.session.user.username);
-    client.getProfile(args, function(err, result) {
-        console.log(result);
-     var results=result.return.split(",");
-      var info={  MGR: results[1],
-                  NOTEID:results[3],
-                  JOBRESPONSIB:results[5],
-                  COUNTRY:results[7],
-                  NAME:results[9]+""+results[10],
-                  XPHONE:results[12],
-                  CNUM:results[14].substring(0,6)};
+  // var url= "http://localhost:8080/axis2/services/BPLoginHandler?wsdl";
+  //     var args={  emailAddr: req.session.user.username};
+  //   soap.createClient(url, function(err, client) {
+  //   console.log(req.session.user.username);
+  //   client.getProfile(args, function(err, result) {
+  //       console.log(result);
+  //    var results=result.return.split(",");
+  //     var info={  MGR: results[1],
+  //                 NOTEID:results[3],
+  //                 JOBRESPONSIB:results[5],
+  //                 COUNTRY:results[7],
+  //                 NAME:results[9]+""+results[10],
+  //                 XPHONE:results[12],
+  //                 CNUM:results[14].substring(0,6)};
 
     var currentUser = req.session.user;
 
@@ -635,12 +743,11 @@ module.exports = function(app) {
           res.render('profile', {
             title: res.__('EW0001'),
             profileResults:profileResults,
-            info:info,
           });
       });
 
-  });
-    });
+  // });
+    // });
 
   
   });
