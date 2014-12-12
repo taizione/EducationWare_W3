@@ -646,6 +646,133 @@ module.exports = function(app) {
                 });
   });
 
+           app.get('/lotus_auntomator', checkLogin);
+    app.get('/lotus_auntomator',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('lotus_auntomator', {
+                  title:  res.__('EW0041'),
+                  coursetype:"lotus_auntomator",
+                  videosource: 'lotus_auntomator.flv',
+                  videoicon:'lotus_auntomator.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+               app.get('/rft_java', checkLogin);
+    app.get('/rft_java',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('rft_java', {
+                  title:  res.__('EW0041'),
+                  coursetype:"rft_java",
+                  videosource: 'rft_java.mp3',
+                  videoicon:'rft_java.jpg',
+                   filetype:'radio',
+
+                });
+  });
+
+      app.get('/rft_python', checkLogin);
+    app.get('/rft_python',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('rft_python', {
+                  title:  res.__('EW0041'),
+                  coursetype:"rft_python",
+                  videosource: 'rft_python.flv',
+                  videoicon:'rft_python.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+      app.get('/rft_advanced_techniques', checkLogin);
+    app.get('/rft_advanced_techniques',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('rft_advanced_techniques', {
+                  title:  res.__('EW0041'),
+                  coursetype:"rft_advanced_techniques",
+                  videosource: 'rft_advanced_techniques.flv',
+                  videoicon:'rft_advanced_techniques.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+        app.get('/tools_workshop_opening', checkLogin);
+    app.get('/tools_workshop_opening',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('tools_workshop_opening', {
+                  title:  res.__('EW0041'),
+                  coursetype:"tools_workshop_opening",
+                  videosource: 'tools_workshop_opening.flv',
+                  videoicon:'tools_workshop_opening.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+     app.get('/tools_workshop_01', checkLogin);
+    app.get('/tools_workshop_01',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('tools_workshop_01', {
+                  title:  res.__('EW0041'),
+                  coursetype:"tools_workshop_01",
+                  videosource: 'tools_workshop_01.flv',
+                  videoicon:'tools_workshop_01.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+     app.get('/tools_workshop_02', checkLogin);
+    app.get('/tools_workshop_02',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('tools_workshop_02', {
+                  title:  res.__('EW0041'),
+                  coursetype:"tools_workshop_02",
+                  videosource: 'tools_workshop_02.flv',
+                  videoicon:'tools_workshop_02.jpg',
+                   filetype:'video',
+
+                });
+  });
+
+
 
 
   app.get('/logout', checkLogin);
