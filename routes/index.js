@@ -772,6 +772,24 @@ module.exports = function(app) {
                 });
   });
 
+    app.get('/continuous_delivery_of_translations', checkLogin);
+    app.get('/continuous_delivery_of_translations',function(req, res) {
+          var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+              i18n.init(req, res);
+    req.setLocale(locale);
+
+
+                res.render('continuous_delivery_of_translations', {
+                  title:  res.__('EW0041'),
+                  coursetype:"continuous_delivery_of_translations",
+                  videosource: 'continuous_delivery_of_translations.mp4',
+                  videoicon:'continuous_delivery_of_translations.jpg',
+                   filetype:'video',
+
+                });
+  });
+
 
 
 
