@@ -21,12 +21,31 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser());
+  // app.use(express.session({
+  //   secret: settings.cookieSecret,
+  //   store: new MongoStore({
+  //     db: settings.db
+  //   })
+  // }));
+
   app.use(express.session({
     secret: settings.cookieSecret,
     store: new MongoStore({
-      db: settings.db
+        // Basic usage 
+        host: 'localhost', // Default, optional 
+        port: 27017, // Default, optional 
+        db: 'admin', // Required 
+ 
+        // Basic authentication (optional) 
+        username: 'sa',
+        password: 'sa',
+ 
+        // Advanced options (optional) 
+        autoReconnect: true, // Default 
+        w: 1, // Default, 
+        ssl: false // Default 
     })
-  }));
+}));
 
   app.use(flash());
 

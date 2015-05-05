@@ -20,6 +20,7 @@ Record.prototype.save = function save(callback) {
 
   };
   mongodb.open(function(err, db) {
+    mongodb.authenticate('sa', 'sa', function(err, result) {
     if (err) {
       return callback(err);
     }
@@ -38,6 +39,7 @@ Record.prototype.save = function save(callback) {
         mongodb.close();
         callback(err, record);
       });
+       });
     });
   });
 };
@@ -50,6 +52,7 @@ Record.prototype.update = function update(callback) {
   };
   console.log("coursename"+this.coursename);
   mongodb.open(function(err, db) {
+     mongodb.authenticate('sa', 'sa', function(err, result) {
     if (err) {
       mongodb.close();
       return callback(err);
@@ -66,6 +69,7 @@ Record.prototype.update = function update(callback) {
         mongodb.close();
         callback(err, record);
       });
+       });
     });
   });
 };
@@ -73,6 +77,7 @@ Record.prototype.update = function update(callback) {
 Record.get = function get(username,coursename, callback) {
  mongodb.close();
   mongodb.open(function(err, db) {
+     mongodb.authenticate('sa', 'sa', function(err, result) {
     if (err) {
       mongodb.close();
       return callback(err);
@@ -101,6 +106,7 @@ Record.get = function get(username,coursename, callback) {
           callback(err, null);
         }
       });
+      });
     });
   });
 };
@@ -109,6 +115,7 @@ Record.get = function get(username,coursename, callback) {
 Record.calculateTimes = function calculateTimes(callback) {
 mongodb.close();
 mongodb.open(function(err, db) {
+     mongodb.authenticate('sa', 'sa', function(err, result) {
     if (err) {
       mongodb.close();
       return callback(err);
@@ -144,11 +151,14 @@ mongodb.open(function(err, db) {
       
     });
   });
-};
+       });
+}
+ 
 
 Record.list = function list(username,callback) {
 mongodb.close();
   mongodb.open(function(err, db) {
+    mongodb.authenticate('sa', 'sa', function(err, result) {
     if (err) {
       mongodb.close();
       return callback(err);
@@ -184,4 +194,5 @@ mongodb.close();
       });
     });
   });
-};
+});
+}

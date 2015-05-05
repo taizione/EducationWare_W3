@@ -16,6 +16,7 @@ User.prototype.save = function save(callback) {
    console.log("save 1");
  mongodb.close();
   mongodb.open(function(err, db) {
+  mongodb.authenticate('sa', 'sa', function(err, result) { 
   console.log("save 2");
     if (err) {
       mongodb.close();
@@ -37,6 +38,7 @@ User.prototype.save = function save(callback) {
       });
     });
   });
+   });
 };
 User.prototype.update = function update(callback) {
   // 存入 Mongodb 的文檔
@@ -46,6 +48,7 @@ User.prototype.update = function update(callback) {
   console.log("update 1");
 mongodb.close();
   mongodb.open(function(err, db) {
+      mongodb.authenticate('sa', 'sa', function(err, result) { 
     if (err) {
       mongodb.close();
              console.log("err"+err);
@@ -63,6 +66,7 @@ mongodb.close();
         mongodb.close();
         return callback(err, user);
       });
+       });
     });
   });
 };
@@ -70,6 +74,7 @@ User.get = function get(username, callback) {
   console.log("get1");
 mongodb.close();
   mongodb.open(function(err, db) {
+    mongodb.authenticate('sa', 'sa', function(err, result) { 
       console.log("get2");
     if (err) {
       mongodb.close();
@@ -97,6 +102,7 @@ mongodb.close();
           return callback(err, null);
         }
       });
+         });
     });
   });
 };
