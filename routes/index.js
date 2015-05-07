@@ -48,6 +48,40 @@ module.exports = function(app) {
       });
     });
   });
+    app.get('/session2014', function(req, res) {
+    var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+    console.log("locale:"+locale);
+    i18n.init(req, res);
+    req.setLocale(locale);
+    Record.calculateTimes(function(err, records) {
+      if (err) {
+        records = [];
+      }
+      console.log(records);
+      res.render('session2014', {
+        title: res.__('EW0001'),
+        records: records,
+      });
+    });
+  });
+    app.get('/session2015', function(req, res) {
+    var locales=req.headers['accept-language'].split(",");
+    locale=locales[0];
+    console.log("locale:"+locale);
+    i18n.init(req, res);
+    req.setLocale(locale);
+    Record.calculateTimes(function(err, records) {
+      if (err) {
+        records = [];
+      }
+      console.log(records);
+      res.render('session2015', {
+        title: res.__('EW0001'),
+        records: records,
+      });
+    });
+  });
 
   
   app.get('/login', checkNotLogin);
